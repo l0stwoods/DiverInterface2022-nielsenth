@@ -7,6 +7,7 @@ public class UnderwaterWarning : MonoBehaviour
 
     public InformationManager im;
     private AudioSource warningAS;
+
     bool audioFinished = true;
     bool isUnderwater = false;
     bool prevState = false;
@@ -26,7 +27,8 @@ public class UnderwaterWarning : MonoBehaviour
         {
             prevState = isUnderwater;
             isUnderwater = true;
-        } else
+        } 
+        else
         {
             prevState = isUnderwater;
             isUnderwater = false;
@@ -34,7 +36,7 @@ public class UnderwaterWarning : MonoBehaviour
 
         if (!prevState && isUnderwater && audioFinished)
         {
-            Debug.Log("I am underwater. Playing audio.");
+            Debug.Log("I am underwater. Try audio.");
             StartCoroutine(AudioCompletion());
         }
     }
